@@ -57,7 +57,6 @@ const songs = [
     peto: "no",
   },
 ];
-
 const AddSong = (song) => songs.push(song);
 
 const newSong = {
@@ -70,5 +69,11 @@ const newSong = {
   peto: "si",
 };
 
-AddSong(newSong);
-console.log(songs);
+const deleteTitle = (title) => songs.filter((song) => song.title !== title);
+
+const returnSong = (title) => songs.filter((song) => song.title == title);
+
+const songForGender = (song, gender) => songs.filter(song.gender === gender);
+
+const ageOfdebut = (songs) =>
+  songs.toSorted((songA, songB) => songA.year - songB.year);
